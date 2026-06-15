@@ -4,17 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>소담반상 코너특화교육</title>
+
   <!-- 구글 폰트: 제목(명조체), 본문(고딕체) -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Song+Myung&display=swap" rel="stylesheet">
-<style>
-  <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>소담반상 코너특화교육</title>
-  <!-- 구글 폰트 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Song+Myung&display=swap" rel="stylesheet">
+
   <style>
     :root {
       /* 프리미엄 컬러 팔레트 */
@@ -22,7 +15,7 @@
       --accent-gold:    #C5A059;
       --brand-brown:    #463224;
       --brown-dark:     #2C1F15;
-      
+
       /* 배경 및 중립색 */
       --bg-sand:        #F9F7F2;
       --paper-white:    rgba(255, 255, 255, 0.92);
@@ -44,6 +37,157 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background-color: var(--bg-sand);
+      background-image: linear-gradient(rgba(249,247,242,0.85), rgba(249,247,242,0.85)),
+                        url('https://images.unsplash.com/photo-1555992336-03a23c5c0e5c?auto=format&fit=crop&w=1400&q=80');
+      background-attachment: fixed;
+      background-size: cover;
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--primary-navy);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover { color: var(--accent-gold); }
+
+    .skip-link {
+      position: absolute;
+      top: -50px;
+      left: 16px;
+      z-index: 1000;
+      padding: 12px 20px;
+      background: var(--primary-navy);
+      color: #fff;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      transition: top 0.3s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
+
+    .highlight {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-left: 8px;
+      box-shadow: 0 2px 5px rgba(197,160,89,0.3);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper-white);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--line-color);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .nav-wrap {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 80px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 180px;
+    }
+    .brand strong {
+      font-family: var(--font-title);
+      color: var(--brand-brown);
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+    }
+    .brand span {
+      color: var(--accent-gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .page-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .page-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: var(--brown-dark);
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+    .page-nav a:hover {
+      color: #fff;
+      background: var(--primary-navy);
+      border-color: var(--primary-navy);
+    }
+
+    .document {
+      width: min(100% - 32px, 940px);
+      margin: 48px auto 80px;
+      padding: 60px;
+      background: var(--paper-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#content" class="skip-link">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="brand">
+        <strong>소담반상</strong>
+        <span>Premium Education</span>
+      </div>
+      <nav class="page-nav">
+        <ul>
+          <li><a href="#">교육소개</a></li>
+          <li><a href="#">코너특화</a></li>
+          <li><a href="#">커리큘럼</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="document" id="content">
+    <h1>코너특화교육 <span class="highlight">New</span></h1>
+    <p>여기에 교육 내용을 입력하세요. 소담반상의 정갈한 이미지가 디자인에 반영됩니다.</p>
+  </main>
+
+</body>
+</html>
 
     body {
       margin: 0;
