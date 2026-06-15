@@ -4,146 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>소담반상 코너특화교육</title>
-  <style>
+  <!-- 구글 폰트: 제목(명조체), 본문(고딕체) -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Song+Myung&display=swap" rel="stylesheet">
+<style>
 :root {
-  --bg:            #F5F5F5;
-  --paper:         #FFFFFF;
-  --ink:           #212529;
-  --muted:         #6E6258;
-  --line:          #E0E0E0;
-  --beige:         #EFE3D0;
-  --brown:         #463224;
-  --brown-dark:    #2C1F15;
-  --navy:          #003366;
-  --navy-soft:     #E3F2FD;
-  --gold:          #FFC107;
-  --danger:        #9F3A2F;
-  --radius-lg:     24px;
-  --radius-md:     16px;
-  --radius-sm:     10px;
-  --shadow:        0 4px 20px rgba(0,0,0,.08);
-  --shadow-soft:   0 2px 8px  rgba(0,0,0,.04);
-  --max:           1120px;
+  /* 핵심 컬러 팔레트 */
+  --primary-navy:   #002D5E; /* 깊고 신뢰감 있는 네이비 */
+  --accent-gold:    #C5A059; /* 은은한 샴페인 골드 */
+  --brand-brown:    #463224; /* 따뜻하고 깊은 브라운 (소담반상 메인) */
+  --brown-dark:     #2C1F15;
+  
+  /* 배경 및 중립색 */
+  --bg-sand:        #F9F7F2; /* 아주 연한 베이지색 (고급 종이 질감 느낌) */
+  --paper-white:    rgba(255, 255, 255, 0.92);
+  --line-color:     rgba(197, 160, 89, 0.25); /* 골드톤이 섞인 라인 */
+  --text-main:      #2C2C2C;
+  --text-muted:     #6E6258;
+
+  /* 규격 및 효과 */
+  --radius-lg:      20px;
+  --radius-sm:      8px;
+  --shadow:         0 12px 40px rgba(0,0,0,0.12);
+  --max:            1120px;
+
+  /* 폰트 설정 */
+  --font-main:      'Noto Sans KR', sans-serif;
+  --font-title:     'Song Myung', serif;
 }
 
-   *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
-  color:var(--ink);
-  background:radial-gradient(circle at top left, rgba(255,193,7,0.12), transparent 34rem),
-              linear-gradient(180deg,#fbf8f2 0%,var(--bg) 100%);
-  line-height:1.6;
-  word-break:keep-all;
-}
-a{
-  color:var(--navy);
-  text-decoration:none;
-}
-a:hover{color:var(--gold);}
-    .skip-link {
-      position: absolute;
-      top: -44px;
-      left: 16px;
-      z-index: 100;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--navy);
-      border-radius: var(--radius-sm);
-      transition: top 0.2s ease;
-}
-  .highlight{
-    display:inline-block;
-    background:var(--gold);
-    color:var(--navy);
-    padding:4px 12px;
-    border-radius:var(--radius-sm);
-    font-weight:700;
-    margin-left:8px;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-sand);
+  /* 배경 이미지가 있을 경우 대비 */
+  background-image: linear-gradient(rgba(249, 247, 242, 0.8), rgba(249, 247, 242, 0.8)), 
+                    url('https://images.unsplash.com/photo-1555992336-03a23c5c0e5c?auto=format&fit=crop&w=1400&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-main);
+  line-height: 1.7;
 }
 
+/* 링크 스타일 */
+a {
+  color: var(--primary-navy);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover { color: var(--accent-gold); }
 
+/* 스킵 링크 (접근성) */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 16px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: var(--primary-navy);
+  color: #fff;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transition: top 0.3s ease;
+}
+.skip-link:focus { top: 0; outline: none; }
 
-    .skip-link:focus {
-      top: 16px;
-      outline: 3px solid rgba(38, 79, 115, 0.25);
-    }
+/* 헤더 영역 */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--paper-white);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(228, 217, 202, 0.9);
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(14px);
-    }
+.nav-wrap {
+  width: min(100% - 40px, var(--max));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85px;
+}
 
-    .nav-wrap {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 72px;
-    }
+/* 브랜드 로고 영역 */
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+.brand strong {
+  font-family: var(--font-title);
+  color: var(--brand-brown);
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
+}
+.brand span {
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 180px;
-    }
+/* 네비게이션 */
+.page-nav ul {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page-nav a {
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: var(--brown-dark);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.page-nav a:hover {
+  background: var(--primary-navy);
+  color: #fff;
+}
 
-    .brand strong {
-      color: var(--brown-dark);
-      font-size: 1rem;
-      letter-spacing: -0.02em;
-    }
+/* 강조 텍스트 (하이라이트) */
+.highlight {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #fff; /* 골드 배경엔 흰색 글씨가 고급스럽습니다 */
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 0 4px;
+  box-shadow: 0 2px 5px rgba(197, 160, 89, 0.3);
+}
 
-    .brand span {
-      color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
+/* 문서 메인 컨테이너 */
+.document {
+  width: min(100% - 40px, 900px); /* 본문은 좀 더 좁게 잡는 것이 가독성에 좋습니다 */
+  margin: 50px auto 100px;
+  padding: 60px;
+  background: var(--paper-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.5);
+}
 
-    .page-nav ul {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .page-nav a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 8px 16px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      color: var(--brown-dark);
-      font-size: 0.94rem;
-      font-weight: 700;
-      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-    }
-
-    .page-nav a:hover,
-    .page-nav a:focus-visible {
-      color: var(--blue);
-      background: var(--blue-soft);
-      border-color: rgba(38, 79, 115, 0.14);
-      outline: none;
-    }
-
-    .document {
-      width: min(100% - 32px, var(--max));
-      margin: 32px auto 72px;
-    }
+/* 타이틀 디자인 추가 */
+.document h1 {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: var(--brand-brown);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.document h1::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-gold);
+  margin: 20px auto 0;
+}
+</style>
 
     .hero {
       position: relative;
