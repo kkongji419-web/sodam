@@ -5,51 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>소담반상 코너특화교육 안내문</title>
   <style>
-    :root {
-      --bg: #f6f1e8;
-      --paper: #ffffff;
-      --ink: #26211d;
-      --muted: #6e6258;
-      --line: #e4d9ca;
-      --beige: #efe3d0;
-      --brown: #6f4e37;
-      --brown-dark: #463224;
-      --blue: #264f73;
-      --blue-soft: #eaf2f8;
-      --accent: #b88652;
-      --danger: #9f3a2f;
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 10px;
-      --shadow: 0 18px 45px rgba(70, 50, 36, 0.12);
-      --shadow-soft: 0 8px 24px rgba(38, 33, 29, 0.08);
-      --max: 1120px;
-    }
+:root {
+  --bg:            #F5F5F5;
+  --paper:         #FFFFFF;
+  --ink:           #212529;
+  --muted:         #6E6258;
+  --line:          #E0E0E0;
+  --beige:         #EFE3D0;
+  --brown:         #463224;
+  --brown-dark:    #2C1F15;
+  --navy:          #003366;
+  --navy-soft:     #E3F2FD;
+  --gold:          #FFC107;
+  --danger:        #9F3A2F;
+  --radius-lg:     24px;
+  --radius-md:     16px;
+  --radius-sm:     10px;
+  --shadow:        0 4px 20px rgba(0,0,0,.08);
+  --shadow-soft:   0 2px 8px  rgba(0,0,0,.04);
+  --max:           1120px;
+}
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(184, 134, 82, 0.14), transparent 34rem),
-        linear-gradient(180deg, #fbf8f2 0%, var(--bg) 100%);
-      line-height: 1.6;
-      word-break: keep-all;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
+   *{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+  color:var(--ink);
+  background:radial-gradient(circle at top left, rgba(255,193,7,0.12), transparent 34rem),
+              linear-gradient(180deg,#fbf8f2 0%,var(--bg) 100%);
+  line-height:1.6;
+  word-break:keep-all;
+}
+a{
+  color:var(--navy);
+  text-decoration:none;
+}
+a:hover{color:var(--gold);}
     .skip-link {
       position: absolute;
       top: -44px;
@@ -57,10 +49,21 @@
       z-index: 100;
       padding: 10px 14px;
       color: #fff;
-      background: var(--blue);
+      background: var(--navy);
       border-radius: var(--radius-sm);
       transition: top 0.2s ease;
-    }
+}
+  .highlight{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--navy);
+    padding:4px 12px;
+    border-radius:var(--radius-sm);
+    font-weight:700;
+    margin-left:8px;
+}
+
+
 
     .skip-link:focus {
       top: 16px;
@@ -428,7 +431,7 @@
     .trainee-table tbody th {
       width: 72px;
       color: var(--blue);
-      background: var(--blue-soft);
+      background: var(--navy-soft);
       text-align: center;
     }
 
@@ -460,7 +463,7 @@
 
     legend {
       padding: 0 8px;
-      color: var(--brown-dark);
+      color: var(--navy-soft);
       font-weight: 900;
     }
 
@@ -478,10 +481,10 @@
       gap: 8px;
       min-height: 42px;
       padding: 10px 12px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
+      border: 1px solid (--line);
+      border-radius: (--radius-sm);
       background: #fff;
-      color: var(--muted);
+      color: (--muted);
       font-size: 0.92rem;
       cursor: pointer;
     }
@@ -490,7 +493,7 @@
     input[type="checkbox"] {
       width: 16px;
       height: 16px;
-      accent-color: var(--blue);
+      accent-color: (--blue);
     }
 
     .check-row {
@@ -505,7 +508,7 @@
       width: 100%;
       margin-top: 12px;
       padding: 14px 16px;
-      border: 1px solid var(--line);
+      border: 1px solid (--line);
       border-radius: var(--radius-sm);
       color: var(--ink);
       background: #fff;
@@ -529,7 +532,7 @@
       padding: 22px;
       border-radius: var(--radius-md);
       color: #fff;
-      background: linear-gradient(135deg, var(--brown-dark), var(--blue));
+      background: linear-gradient(135deg, var(--navy-soft), var(--gold));
     }
 
     .submit-guide h3 {
@@ -541,6 +544,7 @@
       margin: 0;
       color: rgba(255, 255, 255, 0.86);
     }
+    
 
     .fake-button {
       display: inline-flex;
@@ -549,7 +553,7 @@
       margin-top: 16px;
       padding: 11px 18px;
       border-radius: 999px;
-      color: var(--brown-dark);
+      color: var(--gold);
       background: #fff;
       font-weight: 900;
     }
